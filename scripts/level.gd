@@ -8,7 +8,9 @@ extends Node2D
 func _ready():
 	var traps = get_tree().get_nodes_in_group("traps")
 	for trap in traps:
-		trap.connect("touched_player", _on_trap_touched_player)
+		trap.touched_player.connect(_on_trap_touched_player)
+	
+	player.global_position = start_position.global_position
 
 
 func _process(delta):
