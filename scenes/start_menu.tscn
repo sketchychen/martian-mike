@@ -1,0 +1,76 @@
+[gd_scene load_steps=5 format=3 uid="uid://bvl62ixskpc76"]
+
+[ext_resource type="Script" path="res://scripts/start_menu.gd" id="1_73hbf"]
+[ext_resource type="FontFile" uid="uid://vtpqn4a7fiyr" path="res://assets/fonts/Kenney Pixel Square.ttf" id="1_t7ebe"]
+[ext_resource type="PackedScene" uid="uid://c4lvpymau3s5u" path="res://scenes/bg.tscn" id="3_dxpoo"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_gt15b"]
+font = ExtResource("1_t7ebe")
+font_size = 40
+outline_size = 12
+outline_color = Color(0, 0, 0, 1)
+
+[node name="StartMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_73hbf")
+
+[node name="Win" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -95.0
+offset_top = -59.145
+offset_right = 95.0
+offset_bottom = 3.85504
+grow_horizontal = 2
+grow_vertical = 2
+text = "Hippity Hoppity"
+label_settings = SubResource("LabelSettings_gt15b")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StartButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -34.0
+offset_top = 21.0
+offset_right = 34.0
+offset_bottom = 53.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_t7ebe")
+text = "Start
+"
+
+[node name="QuitButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -34.0
+offset_top = 62.0
+offset_right = 34.0
+offset_bottom = 94.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_t7ebe")
+text = "Quit"
+
+[node name="BG" parent="." instance=ExtResource("3_dxpoo")]
+
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
