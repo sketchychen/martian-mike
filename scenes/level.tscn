@@ -18,6 +18,7 @@ size = Vector2(2277, 30)
 [node name="Level" type="Node2D"]
 script = ExtResource("1_1uff6")
 next_level = ExtResource("2_vcc1x")
+level_time = 30
 
 [node name="BG" parent="." instance=ExtResource("7_24utk")]
 
@@ -57,7 +58,7 @@ layer_0/tile_data = PackedInt32Array(1048575, 458752, 1, 1114111, 458752, 1, 983
 position = Vector2(30, 192)
 
 [node name="Exit" parent="." instance=ExtResource("9_6bl4v")]
-position = Vector2(174, 192)
+position = Vector2(1331, 96)
 
 [node name="Player" parent="." instance=ExtResource("2_oejeo")]
 position = Vector2(2.08165e-12, 2.08165e-12)
